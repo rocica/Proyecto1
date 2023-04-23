@@ -36,10 +36,10 @@ y2 = 50
 rectangle_points = draw_rectangle_dda(x1, y1, x2, y2)
 
 # Draw a square with DDA algorithm
-x1 = 50
-y1 = 50
-x2 = 100
-y2 = 100
+x1 = 40
+y1 = 60
+x2 = 80
+y2 = 80
 square_points = draw_rectangle_dda(x1, y1, x2, y2)
 
 # Plot the points using matplotlib
