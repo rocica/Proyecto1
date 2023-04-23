@@ -1,64 +1,64 @@
 import matplotlib.pyplot as plt
 import tkinter as tk
 
-def draw_square():
+def dibujar_cuadrado():
     """
-    Draw a square using matplotlib.
+    Dibujar un cuadrado utilizando matplotlib.
     """
-    # Define the vertices of the square
+    # Definir los vértices del cuadrado
     vertices = [(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)]
 
-    # Extract x-coordinates and y-coordinates from the vertices
-    xs = [vertex[0] for vertex in vertices]
-    ys = [vertex[1] for vertex in vertices]
+    # Extraer las coordenadas x e y de los vértices
+    xs = [vertice[0] for vertice in vertices]
+    ys = [vertice[1] for vertice in vertices]
 
-    # Plot the square
+    # Graficar el cuadrado
     plt.plot(xs, ys)
 
-def draw_triangle():
+def dibujar_triangulo():
     """
-    Draw an equilateral triangle using matplotlib.
+    Dibujar un triángulo equilátero utilizando matplotlib.
     """
-    # Define the vertices of the triangle
+    # Definir los vértices del triángulo
     vertices = [(0, 0), (1, 0), (0.5, 0.5), (0, 0)]
 
-    # Extract x-coordinates and y-coordinates from the vertices
-    xs = [vertex[0] for vertex in vertices]
-    ys = [vertex[1] for vertex in vertices]
+    # Extraer las coordenadas x e y de los vértices
+    xs = [vertice[0] for vertice in vertices]
+    ys = [vertice[1] for vertice in vertices]
 
-    # Plot the triangle
+    # Graficar el triángulo
     plt.plot(xs, ys)
 
-def draw_shape(shape):
+def dibujar_figura(figura):
     """
-    Draw the shape based on the user's choice.
+    Dibujar la figura basada en la elección del usuario.
     """
-    if shape == "Square":
-        draw_square()
-    elif shape == "Triangle":
-        draw_triangle()
+    if figura == "Cuadrado":
+        dibujar_cuadrado()
+    elif figura == "Triángulo":
+        dibujar_triangulo()
 
-    # Set the aspect ratio to 'equal' to ensure square shape
+    # Establecer la relación de aspecto en 'igual' para asegurar una forma cuadrada
     plt.axis('equal')
-    # Show the plot
+    # Mostrar la gráfica
     plt.show()
 
-# Create the tkinter window
+# Crear la ventana de tkinter
 root = tk.Tk()
-root.title("Shape Drawer")
+root.title("Dibujante de Figuras")
 
-# Set the background color to soft pink
+# Establecer el color de fondo en rosa claro
 root.configure(bg="#FFD9EB")
 
-# Create a label for the shape selection
-shape_label = tk.Label(root, text="Select Shape:")
-shape_label.pack()
+# Crear una etiqueta para la selección de figura
+etiqueta_figura = tk.Label(root, text="Seleccionar Figura:")
+etiqueta_figura.pack()
 
-# Create buttons for shape selection with fuchsia color
-square_button = tk.Button(root, text="Square", command=lambda: draw_shape("Square"), fg="fuchsia")
-square_button.pack()
-triangle_button = tk.Button(root, text="Triangle", command=lambda: draw_shape("Triangle"), fg="fuchsia")
-triangle_button.pack()
+# Crear botones para la selección de figura con color fucsia
+boton_cuadrado = tk.Button(root, text="Cuadrado", command=lambda: dibujar_figura("Cuadrado"), fg="fuchsia")
+boton_cuadrado.pack()
+boton_triangulo = tk.Button(root, text="Triángulo", command=lambda: dibujar_figura("Triángulo"), fg="fuchsia")
+boton_triangulo.pack()
 
-# Start the tkinter event loop
+# Iniciar el ciclo de eventos de tkinter
 root.mainloop()
