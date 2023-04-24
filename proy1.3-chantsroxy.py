@@ -1,51 +1,35 @@
 import turtle
 
-# Crear el turtlr
+# Crear el turtle
 t = turtle.Turtle()
-
-# Velocidad del cursor
-t.speed('normal')
-
-# Color de la pluma
+t.speed('normal')  # Velocidad del cursor
 t.pencolor('red')
-
-# Color interno
 t.fillcolor('pink')
 
-# Donde la pluma empieza
-t.penup()
-t.goto(0, 0)
-t.pendown()
+# Función que dibuja rectángulo
 
-# Se dibuja el rectangulo
-width = 100
-height = 50
-t.begin_fill()
-for i in range(2):
-    t.forward(width)
-    t.right(90)
-    t.forward(height)
-    t.right(90)
-t.end_fill()
+
+def draw_rectangle():
+    t.penup()
+    t.goto(0, 0)
+    t.pendown()
+    ancho = 100
+    alto = 50
+    t.begin_fill()
+    for i in range(2):
+        t.forward(ancho)
+        t.right(90)
+        t.forward(alto)
+        t.right(90)
+    t.end_fill()
+
+
+draw_rectangle()
 
 t.clear()
 
 # Rota el cursor 45°
 t.right(45)
+draw_rectangle()
 
-# Mover el cursor para la figura rotada
-t.penup()
-t.goto(0, 0)
-t.pendown()
-
-# Se hace el mismo rectangulo en una direección diferente
-t.begin_fill()
-for i in range(2):
-    t.forward(width)
-    t.right(90)
-    t.forward(height)
-    t.right(90)
-t.end_fill()
-
-# Mantiene la pantalla
 turtle.done()
