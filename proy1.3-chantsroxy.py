@@ -9,12 +9,12 @@ t.fillcolor('pink')
 # Función que dibuja rectángulo
 
 
-def draw_rectangle():
+def draw_rectangle(size):
     t.penup()
     t.goto(0, 0)
     t.pendown()
-    ancho = 100
-    alto = 50
+    ancho = 100 * size
+    alto = 50 * size
     t.begin_fill()
     for i in range(2):
         t.forward(ancho)
@@ -24,12 +24,11 @@ def draw_rectangle():
     t.end_fill()
 
 
-draw_rectangle()
+draw_rectangle(1)
 
 t.clear()
 
-# Rota el cursor 45°
-t.right(45)
-draw_rectangle()
+# Resize
+draw_rectangle(3)
 
 turtle.done()
