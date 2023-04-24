@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt
 import tkinter as tk
 
+
 def dibujar_cuadrado():
-    """
-    Dibujar un cuadrado utilizando matplotlib.
-    """
     # Definir los vértices del cuadrado
     vertices = [(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)]
 
@@ -15,10 +13,8 @@ def dibujar_cuadrado():
     # Graficar el cuadrado
     plt.plot(xs, ys)
 
+
 def dibujar_triangulo():
-    """
-    Dibujar un triángulo equilátero utilizando matplotlib.
-    """
     # Definir los vértices del triángulo
     vertices = [(0, 0), (1, 0), (0.5, 0.5), (0, 0)]
 
@@ -29,10 +25,8 @@ def dibujar_triangulo():
     # Graficar el triángulo
     plt.plot(xs, ys)
 
+
 def dibujar_figura(figura):
-    """
-    Dibujar la figura basada en la elección del usuario.
-    """
     if figura == "Cuadrado":
         dibujar_cuadrado()
     elif figura == "Triángulo":
@@ -42,6 +36,7 @@ def dibujar_figura(figura):
     plt.axis('equal')
     # Mostrar la gráfica
     plt.show()
+
 
 # Crear la ventana de tkinter
 root = tk.Tk()
@@ -55,10 +50,12 @@ etiqueta_figura = tk.Label(root, text="Seleccionar Figura:")
 etiqueta_figura.pack()
 
 # Crear botones para la selección de figura con color fucsia
-boton_cuadrado = tk.Button(root, text="Cuadrado", command=lambda: dibujar_figura("Cuadrado"), fg="fuchsia")
+boton_cuadrado = tk.Button(
+    root, text="Cuadrado", command=lambda: dibujar_figura("Cuadrado"), fg="fuchsia")
 boton_cuadrado.pack()
-boton_triangulo = tk.Button(root, text="Triángulo", command=lambda: dibujar_figura("Triángulo"), fg="fuchsia")
+boton_triangulo = tk.Button(
+    root, text="Triángulo", command=lambda: dibujar_figura("Triángulo"), fg="fuchsia")
 boton_triangulo.pack()
 
-# Iniciar el ciclo de eventos de tkinter
+# Iniciar el tkinter
 root.mainloop()
